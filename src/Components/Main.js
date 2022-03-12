@@ -1,7 +1,14 @@
 import React from 'react'
+import { Home } from './Home'
+import { Products } from './Products'
 
-export const Main = () => {
+
+
+export const Main = (props) => {
   return (
-    <div>Main</div>
+    <main>
+        {  props.activePage == 'Home' && <Home />  }
+        {  props.activePage == 'Products' && <Products />  }
+    </main>
   )
 }

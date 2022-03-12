@@ -1,20 +1,21 @@
 import React from 'react'
+import { HeaderMenuItem } from './HeaderMenuItem'
 
-export const Header = () => {
+export const Header = (props) => {
   return (
     <header className="siteheader">
         <div className="logo">
             <i className='bx bxs-cat logoicon'></i>
-            Cat<span className="logopart2">Lovers</span>                
+            {props.animal}<span className="logopart2">Lovers</span>                
         </div>
         <nav>
             <ul className="navmenu">
-                <li><a className="headeranchor" href="#">Home</a></li>
-                <li><a className="headeranchor" href="#">Services</a></li>
-                <li><a className="headeranchor" href="#">Products</a></li>
-                <li><a className="headeranchor" href="#about">About</a></li>
-                <li><a className="headeranchor" href="#">Contact</a></li>
-                <li><a className="headeranchor" href="#">Country</a></li>
+                <HeaderMenuItem text="Home"  onPageMenuClick={props.onPageMenuClick}    activePage={props.activePage} /> 
+                <HeaderMenuItem text="Services" onPageMenuClick={props.onPageMenuClick}  activePage={props.activePage} />
+                <HeaderMenuItem text="Products" onPageMenuClick={props.onPageMenuClick} activePage={props.activePage} />
+                <HeaderMenuItem text="About" onPageMenuClick={props.onPageMenuClick} activePage={props.activePage} />
+                <HeaderMenuItem text="Contact" onPageMenuClick={props.onPageMenuClick} activePage={props.activePage} />
+                <HeaderMenuItem text="Country" onPageMenuClick={props.onPageMenuClick} activePage={props.activePage} />
             </ul>
 
             
